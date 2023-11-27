@@ -1,0 +1,26 @@
+.person {
+  background-color: var(--secondary-ligthgray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.person_name {
+  font-size: 20px;
+  color: var(--primary-blue);
+}
+.person_text {
+  max-width: 350px;
+  font-size: 15px;
+  color: var(--secondary-grayblue);
+}
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.control {
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.main {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  color: var(--primary-blue);
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  font-weight: 600;
+  text-align: center;
+}
+.persons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
