@@ -23,8 +23,8 @@ export default function Navbar() {
           {nav ? <MdClose size={22} /> : <AiOutlineMenu size={22} />}
         </div>
         <ul className={`${styles.list} ${nav && styles.active}`}>
-          {routes.map((route) => (
-            <li key={route} className={styles.list_item}>
+          {routes.map((route, index) => (
+            <li key={index} className={styles.list_item}>
               {route}
             </li>
           ))}
