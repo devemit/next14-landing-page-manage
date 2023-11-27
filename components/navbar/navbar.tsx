@@ -24,7 +24,9 @@ export default function Navbar() {
         </div>
         <ul className={`${styles.list} ${nav && styles.active}`}>
           {routes.map((route) => (
-            <li className={styles.list_item}>{route}</li>
+            <li key={route} className={styles.list_item}>
+              {route}
+            </li>
           ))}
         </ul>
         <div className={styles.button}>
