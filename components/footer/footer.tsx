@@ -1,12 +1,20 @@
+'use client';
 import Button from '../ui/button.tsx/button';
 import styles from './footer.module.css';
 import { FaInstagram } from 'react-icons/fa';
 import { CiFacebook, CiYoutube, CiTwitter } from 'react-icons/ci';
 import logo from '../../public/logo.svg';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className={styles.footer}
+    >
       <div className={styles.first}>
         <input type='text' placeholder='Updates in your inbox' />
         <Button
@@ -36,6 +44,6 @@ export default function Footer() {
         </div>
         <Image src={logo} height={20} width={85} alt='logo' />
       </div>
-    </footer>
+    </motion.footer>
   );
 }

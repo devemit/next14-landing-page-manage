@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import styles from './person.module.css';
 import Image, { StaticImageData } from 'next/image';
@@ -6,6 +7,7 @@ import ali from '../../public/avatar-ali.png';
 import anisha from '../../public/avatar-anisha.png';
 import richard from '../../public/avatar-richard.png';
 import shanai from '../../public/avatar-shanai.png';
+import { motion } from 'framer-motion';
 
 import { IoMdArrowDropleft } from 'react-icons/io';
 import { IoMdArrowDropright } from 'react-icons/io';
@@ -15,7 +17,6 @@ interface Person {
   text: string;
   img: StaticImageData;
 }
-
 const data: any = [
   {
     name: 'Ali Bravo',
@@ -38,7 +39,8 @@ const data: any = [
     img: shanai,
   },
 ];
-export default function Person({}) {
+
+export default function Person() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   function handleNext() {
@@ -47,10 +49,14 @@ export default function Person({}) {
   function handlePrev() {
     setCurrentIndex(currentIndex === 0 ? data.length - 1 : currentIndex - 1);
   }
-
   return (
     <>
-      <div className={styles.person}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className={styles.person}
+      >
         <Image
           src={data[currentIndex].img}
           height={75}
@@ -60,10 +66,10 @@ export default function Person({}) {
         />
         <div className={styles.person_name}>{data[currentIndex].name}</div>
         <div className={styles.person_text}>{data[currentIndex].text}</div>
-      </div>
+      </motion.div>
       <div className={styles.controls}>
-        <IoMdArrowDropleft onClick={handlePrev} size={22} className={styles.control} />
-        <IoMdArrowDropright onClick={handleNext} size={22} className={styles.control} />
+        <IoMdArrowDropleft onClick={handlePrev} size={22} className={styles.controler} />
+        <IoMdArrowDropright onClick={handleNext} size={22} className={styles.controler} />
       </div>
     </>
   );

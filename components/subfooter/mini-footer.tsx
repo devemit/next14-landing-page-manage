@@ -1,8 +1,17 @@
+'use client';
+
 import Button from '../ui/button.tsx/button';
 import styles from './mini-footer.module.css';
+import { motion } from 'framer-motion';
+
 export default function MiniFooter() {
   return (
-    <div className={styles.wrapper}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className={styles.wrapper}
+    >
       <div className={styles.title}>Simplify how your team works today</div>
       <div>
         <Button
@@ -14,6 +23,6 @@ export default function MiniFooter() {
           }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
