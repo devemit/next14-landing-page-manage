@@ -7,6 +7,7 @@ import ali from '../../public/avatar-ali.png';
 import anisha from '../../public/avatar-anisha.png';
 import richard from '../../public/avatar-richard.png';
 import shanai from '../../public/avatar-shanai.png';
+import { fadeAnimation } from '@/utils/routes';
 import { motion } from 'framer-motion';
 
 import { IoMdArrowDropleft } from 'react-icons/io';
@@ -52,8 +53,9 @@ export default function Person() {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        variants={fadeAnimation}
+        initial='initial'
+        whileInView='animate'
         viewport={{ once: true }}
         className={styles.person}
       >

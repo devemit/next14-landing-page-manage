@@ -6,12 +6,14 @@ import { CiFacebook, CiYoutube, CiTwitter } from 'react-icons/ci';
 import logo from '../../public/logo.svg';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { fadeAnimation } from '@/utils/routes';
 
 export default function Footer() {
   return (
     <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      variants={fadeAnimation}
+      initial='initial'
+      whileInView='animate'
       viewport={{ once: true }}
       className={styles.footer}
     >

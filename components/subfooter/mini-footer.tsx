@@ -1,5 +1,6 @@
 'use client';
 
+import { fadeAnimation } from '@/utils/routes';
 import Button from '../ui/button.tsx/button';
 import styles from './mini-footer.module.css';
 import { motion } from 'framer-motion';
@@ -7,8 +8,9 @@ import { motion } from 'framer-motion';
 export default function MiniFooter() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      variants={fadeAnimation}
+      initial='initial'
+      whileInView='animate'
       viewport={{ once: true }}
       className={styles.wrapper}
     >
