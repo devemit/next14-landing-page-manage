@@ -1,5 +1,5 @@
 .main {
-  padding: 1rem 5rem;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,65 +13,13 @@
   align-items: center;
   gap: 1.5rem;
 }
-.button {
-  display: none;
-}
+
 .logo {
   z-index: 12;
   margin-top: 0.6rem;
 }
-.list {
-  list-style: none;
-  align-items: center;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.list_item {
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-@media (max-width: 689px) {
-  .hamburger {
-    z-index: 10;
-    display: block;
-  }
-  .list {
-    z-index: 11;
-    position: fixed;
-    transition: 1s left;
-    top: 0;
-    padding: 5rem 2rem;
-    background-color: white;
-    left: -100%;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 50%;
-  }
-  .active {
-    left: 0;
-  }
-  .list_item {
-    font-size: 16px;
-    margin: 1rem 0rem;
-  }
-  .list_item:hover {
-    border-bottom: 2px solid orangered;
-    transition: 1s;
-  }
-}
-@media (min-width: 689px) {
-  .hamburger {
-    display: none;
-  }
-  .list {
-    display: flex;
-  }
-  .button {
-    display: block;
+@media (min-width: 750px) {
+  .main {
+    padding: 1rem 5rem;
   }
 }
